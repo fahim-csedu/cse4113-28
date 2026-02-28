@@ -357,7 +357,7 @@ To avoid merge conflicts and simulate industry-standard decentralized developmen
 | Phase | Deliverable | Description |
 |-------|-------------|-------------|
 | **Phase 1** | Software Requirements Specification (SRS) | Functional & non-functional requirements, use case diagrams, user stories, data dictionary, ER diagram |
-| **Phase 2** | System Design Document (SDD) | Architecture diagram, class diagrams, sequence diagrams, API specifications, database schema, UI wireframes/mockups |
+| **Phase 2** | SDD-lite + API Contract Pack | Lightweight architecture and design notes, sequence flows, data model summary, generated OpenAPI spec, auth/error/examples for critical endpoints |
 | **Phase 3** | Implementation & Demo | Working prototype with core features, API documentation, unit tests, integration test with at least one other team's module, live demo |
 
 ## Cross-Team Integration Requirements

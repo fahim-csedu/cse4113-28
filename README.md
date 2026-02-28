@@ -7,6 +7,10 @@ This repository provides common standards and starter assets so 16 independent t
 ## Repository Contents
 - [`Team_Distribution.md`](./Team_Distribution.md): full module distribution, integration map, and phase expectations.
 - [`Standard_SRS_Template.md`](./Standard_SRS_Template.md): mandatory SRS structure all teams must follow.
+- [`Lab3_SRS_Review_Template.md`](./Lab3_SRS_Review_Template.md): required format for peer SRS review.
+- [`Lab4_SDD_Lite_API_Contract_Template.md`](./Lab4_SDD_Lite_API_Contract_Template.md): combined SDD-lite + API contract pack template.
+- [`QA_Protocol_Lab6_Lab7.md`](./QA_Protocol_Lab6_Lab7.md): mandatory self-test and peer-QA protocol.
+- [`Lab_Submission_Checklists.md`](./Lab_Submission_Checklists.md): pre-submission checklists for each lab.
 - [`frontend-starter/`](./frontend-starter): shared frontend baseline (Next.js + TypeScript + Tailwind + shadcn-compatible setup).
 - [`AGENTS.md`](./AGENTS.md): canonical AI-agent working standard.
 
@@ -20,6 +24,25 @@ This repository provides common standards and starter assets so 16 independent t
 7. Follow `AGENTS.md` rules for AI-assisted development.
 8. Keep integration contracts versioned and stable (`/api/v1/...`).
 9. Follow the **Frontend Integration Plan** section below for mandatory frontend base paths and final merge workflow.
+
+## Lab Deliverables (Required)
+| Lab | Submission |
+|-----|------------|
+| Lab 2 | Team SRS using [`Standard_SRS_Template.md`](./Standard_SRS_Template.md) |
+| Lab 3 | Peer SRS review report using [`Lab3_SRS_Review_Template.md`](./Lab3_SRS_Review_Template.md) |
+| Lab 4 | Combined SDD-lite + API contract pack using [`Lab4_SDD_Lite_API_Contract_Template.md`](./Lab4_SDD_Lite_API_Contract_Template.md) |
+| Lab 6 | Self-test pack using [`QA_Protocol_Lab6_Lab7.md`](./QA_Protocol_Lab6_Lab7.md) |
+| Lab 7 | Peer QA augmentation report using [`QA_Protocol_Lab6_Lab7.md`](./QA_Protocol_Lab6_Lab7.md) |
+
+Lab 4 rule:
+- API contract pack must include generated OpenAPI (`openapi.yaml` or `openapi.json`) plus human-written auth/error/examples.
+
+## Before Submission (Quick Checklist)
+- Lab 2: use [Lab_Submission_Checklists.md](./Lab_Submission_Checklists.md#lab-2-srs-submission-checklist)
+- Lab 3: use [Lab_Submission_Checklists.md](./Lab_Submission_Checklists.md#lab-3-peer-srs-review-checklist)
+- Lab 4: use [Lab_Submission_Checklists.md](./Lab_Submission_Checklists.md#lab-4-sdd-lite--api-contract-pack-checklist)
+- Lab 6: use [Lab_Submission_Checklists.md](./Lab_Submission_Checklists.md#lab-6-self-test-pack-checklist)
+- Lab 7: use [Lab_Submission_Checklists.md](./Lab_Submission_Checklists.md#lab-7-peer-qa-augmentation-checklist)
 
 ## Canonical API Namespace Map
 To avoid endpoint collisions, each team must keep all module APIs under its assigned base path:
@@ -94,24 +117,8 @@ Rules:
 4. Team 01 shell links users into each module base path.
 5. Shared SSO is used for authentication and RBAC.
 
-### Integration Milestones
-Phase A:
-- Teams develop independently with assigned API and frontend base paths.
-
-Phase B:
-- Weekly integration check with at least one upstream and one downstream dependency.
-
-Phase C (Final merge week):
-- Freeze route changes.
-- Pin gateway mappings to tagged team releases.
-- Run smoke tests on all 16 module entry routes and key workflows.
-
-### Minimum Smoke Test (Before Final Demo)
-- Each module entry route loads successfully from the unified domain.
-- Navigation from Team 01 shell to each module and back works.
-- Authenticated user session is preserved when switching modules.
-- Unauthorized routes correctly enforce RBAC.
-- No frontend route collision exists under `/portal/*`.
+### Final Integration Checklist
+- Use the final checklist in [`Lab_Submission_Checklists.md`](./Lab_Submission_Checklists.md#final-integration-readiness-checklist-before-demo).
 
 ## Frontend Starter Setup
 ```bash
@@ -122,11 +129,6 @@ npm run dev
 ```
 
 For deterministic installs, generate and commit `frontend-starter/package-lock.json` after the first install.
-
-## Suggested Student Submission Artifacts
-- SRS (Phase 1)
-- SDD + API contract docs (Phase 2)
-- Working module + test evidence + integration demo (Phase 3)
 
 ## Public Sharing Notes
 - This repo is intended for educational use.
