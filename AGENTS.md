@@ -50,6 +50,7 @@ A change is done only if:
 ## 7) API and Integration Discipline
 - Use versioned endpoints (`/api/v1/...`).
 - Keep to your team's assigned base path from root `README.md`.
+- Keep frontend routes under your team's assigned namespace from root `README.md` Frontend Integration Plan.
 - Do not silently change response schema.
 - For breaking changes: update contract docs and notify impacted teams.
 - Always include explicit error handling and typed response models.

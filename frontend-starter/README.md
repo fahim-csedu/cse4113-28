@@ -28,6 +28,7 @@ Shared frontend baseline for all 16 teams in Bangla Academy.
 
 ## Team Onboarding Checklist
 - Set your team code in `.env.local` (`NEXT_PUBLIC_TEAM_CODE=T01` ... `T16`).
+- Set your frontend mount path in `.env.local` using `NEXT_PUBLIC_APP_BASE_PATH` (example: `/portal/manuscripts` for Team 02).
 - Add your module routes under `src/app/(module)/...`.
 - Keep shared shell (`AppShell`) and design tokens unchanged unless approved globally.
 - Add API client wrappers under `src/lib/`.
@@ -61,8 +62,10 @@ frontend-starter/
 ## Integration Rules
 - Use `NEXT_PUBLIC_API_BASE_URL` for service calls.
 - Keep API contracts versioned (`/api/v1/...`).
+- Keep frontend routes under your assigned base path via `NEXT_PUBLIC_APP_BASE_PATH`.
 - Handle error states and loading states consistently.
 - Follow team-specific API base paths defined in root [`README.md`](../README.md).
+- Follow the Frontend Integration Plan in root [`README.md`](../README.md).
 
 ## AI Agent Rules
 Use the repository root [`AGENTS.md`](../AGENTS.md) when working with AI coding agents.

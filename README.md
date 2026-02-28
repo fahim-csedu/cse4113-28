@@ -19,6 +19,7 @@ This repository provides common standards and starter assets so 16 independent t
 6. Prepare your SRS using `Standard_SRS_Template.md`.
 7. Follow `AGENTS.md` rules for AI-assisted development.
 8. Keep integration contracts versioned and stable (`/api/v1/...`).
+9. Follow the **Frontend Integration Plan** section below for mandatory frontend base paths and final merge workflow.
 
 ## Canonical API Namespace Map
 To avoid endpoint collisions, each team must keep all module APIs under its assigned base path:
@@ -46,6 +47,72 @@ Rule:
 - New endpoints must be created only under your team base path (for example, Team 02 uses `/api/v1/manuscripts/submissions`).
 - Do not create top-level sibling namespaces owned by another team.
 
+## Frontend Integration Plan (One Unified Website)
+This defines how 16 independent team frontends will be combined into one Bangla Academy website without route conflicts.
+
+### Final Integration Model
+- All teams keep separate repositories and deployments.
+- A central web gateway exposes one domain (example: `https://portal.example.edu`).
+- Each team frontend is mounted under a unique frontend base path.
+- Team 01 owns the global shell, authentication entry, and cross-module navigation.
+- Team 01 defines and maintains the final gateway routing configuration.
+
+### Mandatory Frontend Base Paths
+| Team | Module | Frontend Base Path |
+|------|--------|--------------------|
+| T01 | Auth & Portal | `/portal/auth` |
+| T02 | Manuscript Management | `/portal/manuscripts` |
+| T03 | Library & Catalog | `/portal/library` |
+| T04 | E-Book Platform | `/portal/ebooks` |
+| T05 | E-Commerce | `/portal/store` |
+| T06 | Discount & Loyalty | `/portal/discounts` |
+| T07 | Events & Hall Booking | `/portal/events` |
+| T08 | Membership | `/portal/memberships` |
+| T09 | Training | `/portal/training` |
+| T10 | HR & Attendance | `/portal/hr` |
+| T11 | Finance & Accounting | `/portal/finance` |
+| T12 | Inventory & Assets | `/portal/assets` |
+| T13 | Logistics & Transport | `/portal/logistics` |
+| T14 | Document & Archive | `/portal/archive` |
+| T15 | CMS & Website | `/portal/cms` |
+| T16 | Analytics & Reporting | `/portal/analytics` |
+
+Rules:
+- Do not create pages outside your assigned base path.
+- Do not link directly to another team's internal child routes unless the route is documented and stable.
+
+### Team Build Contract
+- Build from `frontend-starter`.
+- Set `NEXT_PUBLIC_APP_BASE_PATH` to your assigned frontend base path.
+- Keep internal links route-relative (`/`, `/reports`, etc.) so Next.js applies base path automatically.
+- Expose a health route under the same namespace (example: `/portal/library/health`).
+
+### How Final Assembly Works
+1. Team frontends are deployed as separate services/containers.
+2. Team 01 gateway routes path prefixes to each team frontend service.
+3. API Gateway routes `/api/v1/...` paths to team backends.
+4. Team 01 shell links users into each module base path.
+5. Shared SSO is used for authentication and RBAC.
+
+### Integration Milestones
+Phase A:
+- Teams develop independently with assigned API and frontend base paths.
+
+Phase B:
+- Weekly integration check with at least one upstream and one downstream dependency.
+
+Phase C (Final merge week):
+- Freeze route changes.
+- Pin gateway mappings to tagged team releases.
+- Run smoke tests on all 16 module entry routes and key workflows.
+
+### Minimum Smoke Test (Before Final Demo)
+- Each module entry route loads successfully from the unified domain.
+- Navigation from Team 01 shell to each module and back works.
+- Authenticated user session is preserved when switching modules.
+- Unauthorized routes correctly enforce RBAC.
+- No frontend route collision exists under `/portal/*`.
+
 ## Frontend Starter Setup
 ```bash
 cd frontend-starter
@@ -55,12 +122,6 @@ npm run dev
 ```
 
 For deterministic installs, generate and commit `frontend-starter/package-lock.json` after the first install.
-
-## Mandatory Standards
-- Shared design system: Tailwind CSS + shadcn-compatible patterns.
-- Consistent requirement IDs and traceability matrix in SRS.
-- Minimum two cross-team integration points per module.
-- PRs must include test evidence and contract impact notes.
 
 ## Suggested Student Submission Artifacts
 - SRS (Phase 1)
