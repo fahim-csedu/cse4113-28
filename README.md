@@ -19,11 +19,11 @@
 - Teams building fully public independent apps are not required to follow the shared auth rule.
 - They may use any suitable auth approach, or no login if the product scope allows it.
 
-## 2) Recommended Project Clusters for Department Use
+## 2) Recommended Projects for Department Use
 
-These clusters reflect the department-oriented ideas and reduce fragmentation.
+These projects reflect the department-oriented ideas and reduce fragmentation.
 
-### Cluster A: Core Department Website + CMS + Scholarship + Events/Auditorium/Lab Booking
+### Project A: Core Department Website + CMS + Scholarship + Events/Auditorium/Lab Booking
 Module: CMS, Blog, News, Public Engagement, Events, Venue Reservation, Scholarship Management
 
 Scope:
@@ -52,7 +52,7 @@ Key Deliverables:
 - News/blog + gallery + contact + language switcher
 - Event listing and hall/lab booking admin/approval workflows
 
-### Cluster B: Academic Operations Suite (Combined)
+### Project B: Academic Operations Suite
 Module: Curriculum, Class Routine, Exam Routine, Invigilation Assignment
 
 Scope: (Inspiration - https://routine.farefin.com/)
@@ -71,7 +71,7 @@ Key Deliverables:
 - Published routine portal
 - Invigilation roster generation and export
 
-### Cluster C: CSEDU Students' Club Portal (Constitution-Aligned)
+### Project C: CSEDU Students' Club Portal
 Context source: [CSEDU Students' Club Constitution](https://docs.google.com/document/d/1cRhEzLumAzjyUBqJHPyJX3c5VUDqreub2800BtLxCuI/edit?tab=t.0)
 
 Scope:
@@ -89,13 +89,14 @@ Key Deliverables:
 - Event/volunteer module
 - Finance/reporting module
 
-### Cluster D: Lab Infrastructure Operations (Combined)
-Module: Server/PC Sharing + Lab Asset Management
+### Project D: Central Inventory and Infrastructure Management
+Module: Department-Wide Inventory, Asset Tracking, Infrastructure Monitoring
 
 Scope:
-- Asset inventory (PCs/devices/network hardware)
+- Department-wide asset inventory (labs, classrooms, offices, devices, network hardware)
+- Asset lifecycle tracking (procurement, allocation, transfer, maintenance, disposal)
+- Server/PC usage and availability monitoring
 - Allocation and usage tracking
-- Server/PC booking and availability monitoring
 - Health/status dashboard and incident logs
 - Maintenance request and lifecycle tracking
 
@@ -104,7 +105,7 @@ Key Deliverables:
 - Booking/allocation workflow
 - Asset registry and maintenance management
 
-### Cluster E: VM Provisioning Portal (Standalone)
+### Project E: VM Provisioning Portal
 Module: Student VM Request and Provisioning Control
 
 Scope:
@@ -119,7 +120,7 @@ Key Deliverables:
 - Admin quota and provisioning controls
 - Student VM lifecycle view
 
-### Cluster F: Digital Knowledge Platform (Combined)
+### Project F: Digital Knowledge Platform
 Module: Digital Archive + Research Repository + Student Project Showcase + Digital Library & Catalog
 
 Scope:
@@ -145,7 +146,7 @@ Key Deliverables:
 - Member borrowing workflow
 - Librarian operations dashboard and reports
 
-## 3) Suggested Additional Project Ideas (if more teams are needed)
+## 3) Suggested Additional Project Ideas 
 - Internship and alumni placement tracker
 - Department helpdesk and ticketing portal
 
@@ -194,15 +195,23 @@ Key Deliverables:
 - Architecture and implementation Q&A
 - Test evidence and design rationale walkthrough
 
-## 5) Minimum Submission Evidence (All Tracks)
-- SRS and revision history
-- Peer review artifacts
-- Sprint progress evidence
-- Test evidence (including changes after peer QA)
-- Deployment/run instructions
-- Known issues and enhancement backlog
+## 5) Marks Distribution
+| Submission | Marks |
+|------------|-------|
+| Lab 2: Problem Definition + SRS v1 | 15 |
+| Lab 3: Peer SRS Evaluation | 10 |
+| Lab 4: SDD-lite + API Contract Pack | 10 |
+| Lab 6: Peer UI Critique | 10 |
+| Lab 8: Peer QA | 15 |
+| Lab 10: Final Project Evaluation | 40 |
+| **Total** | **100** |
 
-## Supporting Templates and Protocols
+Presentation labs:
+- Labs 3, 6, 8, and 10 are team presentations during lab.
+- Each of the evaluated labs still requires the corresponding written submission/artifacts.
+
+
+## 6) Supporting Templates and Protocols
 - [`Standard_SRS_Template.md`](./Standard_SRS_Template.md)
 - [`Lab3_SRS_Review_Template.md`](./Lab3_SRS_Review_Template.md)
 - [`Lab4_SDD_Lite_API_Contract_Template.md`](./Lab4_SDD_Lite_API_Contract_Template.md)
