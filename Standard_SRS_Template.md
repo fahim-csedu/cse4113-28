@@ -1,4 +1,4 @@
-# Bangla Academy Total Automation System (BATAS)
+# CSEDU Web Systems Lab
 ## Standard SRS Structure (For All Teams)
 
 Version: `1.0`  
@@ -35,7 +35,7 @@ Applies To: `Team 01` to `Team 16`
 ## 2. Introduction
 
 ### 2.1 Purpose
-Define the purpose of this module in BATAS and the intended audience of this SRS.
+Define the purpose of this module and the intended audience of this SRS.
 
 ### 2.2 Scope
 Describe module boundaries: what this team will build, and what is explicitly out of scope.
@@ -43,7 +43,7 @@ Describe module boundaries: what this team will build, and what is explicitly ou
 ### 2.3 Definitions, Acronyms, Abbreviations
 | Term | Definition |
 |------|------------|
-| BATAS | Bangla Academy Total Automation System |
+| CSEDU | Department of Computer Science and Engineering, University of Dhaka |
 | SSO | Single Sign-On |
 | RBAC | Role-Based Access Control |
 
@@ -58,7 +58,7 @@ Describe module boundaries: what this team will build, and what is explicitly ou
 ## 3. System Context
 
 ### 3.1 Product Vision Alignment
-How this module contributes to the single integrated BATAS product.
+How this module contributes to the intended product ecosystem or standalone project objective.
 
 ### 3.2 Context Diagram (Module Boundary)
 - External actors

@@ -1,139 +1,212 @@
-# Bangla Academy Lab Kit
+# CSEDU Project Tracks Guide
 
-Shared course repository for the **Bangla Academy Total Automation System (BATAS)** lab.
+## Development Repository Policy
+- Every team must develop in a **public Git repository** throughout the semester.
+- Private development is not allowed for coursework submission.
+- Teams must submit their **public repository link at the end of Lab 4**.
+- Teams can create and manage their own repositories directly (forking this repo is not required).
 
-This repository provides common standards and starter assets so 16 independent teams can build separate modules that merge into one cohesive product.
+## 1) Authentication Policy
 
-## Repository Contents
-- [`Team_Distribution.md`](./Team_Distribution.md): full module distribution, integration map, and phase expectations.
-- [`Standard_SRS_Template.md`](./Standard_SRS_Template.md): mandatory SRS structure all teams must follow.
-- [`Lab3_SRS_Review_Template.md`](./Lab3_SRS_Review_Template.md): required format for peer SRS review.
-- [`Lab4_SDD_Lite_API_Contract_Template.md`](./Lab4_SDD_Lite_API_Contract_Template.md): combined SDD-lite + API contract pack template.
-- [`QA_Protocol_Lab6_Lab7.md`](./QA_Protocol_Lab6_Lab7.md): mandatory self-test and peer-QA protocol.
-- [`Lab_Submission_Checklists.md`](./Lab_Submission_Checklists.md): pre-submission checklists for each lab.
-- [`frontend-starter/`](./frontend-starter): shared frontend baseline (Next.js + TypeScript + Tailwind + shadcn-compatible setup).
-- [`AGENTS.md`](./AGENTS.md): canonical AI-agent working standard.
+### Default Shared Auth (for internal department systems)
+- Use Google Sign-In (OAuth).
+- Suggested domain mapping:
+  - Students: `@cs.du.ac.bd`
+  - Teachers and officers: `@cse.du.ac.bd`
+- Keep role mapping explicit in documentation.
 
-## How Students Should Use This Repo
-1. Read the module scope in `Team_Distribution.md`.
-2. Fork this repository to your team GitHub organization/account and keep your work in the fork.
-3. Create your team repository/module implementation from `frontend-starter`.
-4. Keep feature/fix branches in your fork and open PRs with full implementation history.
-5. Use Conventional Commits and include AI prompt traceability in commit body/footer for AI-assisted work (`Prompt:`, `Tooling:`, `Validation:`).
-6. Prepare your SRS using `Standard_SRS_Template.md`.
-7. Follow `AGENTS.md` rules for AI-assisted development.
-8. Keep integration contracts versioned and stable (`/api/v1/...`).
-9. Follow the **Frontend Integration Plan** section below for mandatory frontend base paths and final merge workflow.
+### Exception for Independent Public Apps
+- Teams building fully public independent apps are not required to follow the shared auth rule.
+- They may use any suitable auth approach, or no login if the product scope allows it.
 
-## Lab Deliverables (Required)
-| Lab | Submission |
-|-----|------------|
-| Lab 2 | Team SRS using [`Standard_SRS_Template.md`](./Standard_SRS_Template.md) |
-| Lab 3 | Peer SRS review report using [`Lab3_SRS_Review_Template.md`](./Lab3_SRS_Review_Template.md) |
-| Lab 4 | Combined SDD-lite + API contract pack using [`Lab4_SDD_Lite_API_Contract_Template.md`](./Lab4_SDD_Lite_API_Contract_Template.md) |
-| Lab 6 | Self-test pack using [`QA_Protocol_Lab6_Lab7.md`](./QA_Protocol_Lab6_Lab7.md) |
-| Lab 7 | Peer QA augmentation report using [`QA_Protocol_Lab6_Lab7.md`](./QA_Protocol_Lab6_Lab7.md) |
+## 2) Recommended Project Clusters for Department Use
 
-Lab 4 rule:
-- API contract pack must include generated OpenAPI (`openapi.yaml` or `openapi.json`) plus human-written auth/error/examples.
+These clusters reflect the department-oriented ideas and reduce fragmentation.
 
-## Before Submission (Quick Checklist)
-- Lab 2: use [Lab_Submission_Checklists.md](./Lab_Submission_Checklists.md#lab-2-srs-submission-checklist)
-- Lab 3: use [Lab_Submission_Checklists.md](./Lab_Submission_Checklists.md#lab-3-peer-srs-review-checklist)
-- Lab 4: use [Lab_Submission_Checklists.md](./Lab_Submission_Checklists.md#lab-4-sdd-lite--api-contract-pack-checklist)
-- Lab 6: use [Lab_Submission_Checklists.md](./Lab_Submission_Checklists.md#lab-6-self-test-pack-checklist)
-- Lab 7: use [Lab_Submission_Checklists.md](./Lab_Submission_Checklists.md#lab-7-peer-qa-augmentation-checklist)
+### Cluster A: Core Department Website + CMS + Scholarship + Events/Auditorium/Lab Booking
+Module: CMS, Blog, News, Public Engagement, Events, Venue Reservation, Scholarship Management
 
-## Canonical API Namespace Map
-To avoid endpoint collisions, each team must keep all module APIs under its assigned base path:
+Scope:
+- Public-facing website with dynamic pages, news, announcements, and blog
+- WYSIWYG CMS for non-technical staff
+- Bangla/English multi-language support and translation workflow
+- Gallery management (images/videos)
+- Contact/inquiry forms and response tracking
+- SEO metadata, sitemap generation, social sharing metadata
+- Scholarship management:
+  - publish scholarship notices
+  - open/close application windows
+  - support one-off and monthly scholarships
+  - support multiple scholarship categories with different amounts
+  - review and export applications
+  - publish recipient lists
+  - post regular scholarship updates
+- Event publishing, public calendar, registrations, and Auditorium/Lab booking workflow
+- Event check-in (QR) and post-event feedback
+- Room/lab booking calendar for classes and events
 
-| Team | Module | Base Path |
-|------|--------|-----------|
-| T01 | Auth & Portal | `/api/v1/auth` |
-| T02 | Manuscript Management | `/api/v1/manuscripts` |
-| T03 | Library & Catalog | `/api/v1/library` |
-| T04 | E-Book Platform | `/api/v1/ebooks` |
-| T05 | E-Commerce | `/api/v1/store` |
-| T06 | Discount & Loyalty | `/api/v1/discounts` |
-| T07 | Events & Hall Booking | `/api/v1/events` |
-| T08 | Membership | `/api/v1/memberships` |
-| T09 | Training | `/api/v1/training` |
-| T10 | HR & Attendance | `/api/v1/hr` |
-| T11 | Finance & Accounting | `/api/v1/finance` |
-| T12 | Inventory & Assets | `/api/v1/assets` |
-| T13 | Logistics & Transport | `/api/v1/logistics` |
-| T14 | Document & Archive | `/api/v1/archive` |
-| T15 | CMS & Website | `/api/v1/cms` |
-| T16 | Analytics & Reporting | `/api/v1/analytics` |
+Key Deliverables:
+- Public website frontend
+- CMS admin panel
+- Scholarship management panel
+- News/blog + gallery + contact + language switcher
+- Event listing and hall/lab booking admin/approval workflows
 
-Rule:
-- New endpoints must be created only under your team base path (for example, Team 02 uses `/api/v1/manuscripts/submissions`).
-- Do not create top-level sibling namespaces owned by another team.
+### Cluster B: Academic Operations Suite (Combined)
+Module: Curriculum, Class Routine, Exam Routine, Invigilation Assignment
 
-## Frontend Integration Plan (One Unified Website)
-This defines how 16 independent team frontends will be combined into one Bangla Academy website without route conflicts.
+Scope: (Inspiration - https://routine.farefin.com/)
+- Multi-version curriculum management
+- Class and exam routine generation
+- Conflict detection (room/time/teacher constraints)
+- Invigilation assignment creator with constraints and workload balancing
+- Publish/export schedules for students and faculty
+- Thesis supervision and defense scheduling manager
+- Find missing courses for a student who gets admitted to one curriculum and shifts to new curriculum (Example - https://docs.google.com/spreadsheets/d/1lX9IrMGa9XMRvncLe_Kd-c_v5P0Rr8GQT1wYOV1eT_Y/edit?gid=1463163706#gid=1463163706)
+- Possible integration with last semester's billing system from Team Formula1
 
-### Final Integration Model
-- All teams keep separate repositories and deployments.
-- A central web gateway exposes one domain (example: `https://portal.example.edu`).
-- Each team frontend is mounted under a unique frontend base path.
-- Team 01 owns the global shell, authentication entry, and cross-module navigation.
-- Team 01 defines and maintains the final gateway routing configuration.
+Key Deliverables:
+- Planner/admin UI
+- Conflict report view
+- Published routine portal
+- Invigilation roster generation and export
 
-### Mandatory Frontend Base Paths
-| Team | Module | Frontend Base Path |
-|------|--------|--------------------|
-| T01 | Auth & Portal | `/portal/auth` |
-| T02 | Manuscript Management | `/portal/manuscripts` |
-| T03 | Library & Catalog | `/portal/library` |
-| T04 | E-Book Platform | `/portal/ebooks` |
-| T05 | E-Commerce | `/portal/store` |
-| T06 | Discount & Loyalty | `/portal/discounts` |
-| T07 | Events & Hall Booking | `/portal/events` |
-| T08 | Membership | `/portal/memberships` |
-| T09 | Training | `/portal/training` |
-| T10 | HR & Attendance | `/portal/hr` |
-| T11 | Finance & Accounting | `/portal/finance` |
-| T12 | Inventory & Assets | `/portal/assets` |
-| T13 | Logistics & Transport | `/portal/logistics` |
-| T14 | Document & Archive | `/portal/archive` |
-| T15 | CMS & Website | `/portal/cms` |
-| T16 | Analytics & Reporting | `/portal/analytics` |
+### Cluster C: CSEDU Students' Club Portal (Constitution-Aligned)
+Context source: [CSEDU Students' Club Constitution](https://docs.google.com/document/d/1cRhEzLumAzjyUBqJHPyJX3c5VUDqreub2800BtLxCuI/edit?tab=t.0)
 
-Rules:
-- Do not create pages outside your assigned base path.
-- Do not link directly to another team's internal child routes unless the route is documented and stable.
+Scope:
+- Membership registration and rule acknowledgement workflow
+- Executive committee role management aligned with constitution roles
+- Election and committee-term tracking support
+- Event/workshop/carnival planning and volunteer management
+- Notice publication for policy actions (membership cancellation, decisions)
+- Fund, budget, and periodic expenditure reporting support
+- Media/publication workflow for club communication
 
-### Team Build Contract
-- Build from `frontend-starter`.
-- Set `NEXT_PUBLIC_APP_BASE_PATH` to your assigned frontend base path.
-- Keep internal links route-relative (`/`, `/reports`, etc.) so Next.js applies base path automatically.
-- Expose a health route under the same namespace (example: `/portal/library/health`).
+Key Deliverables:
+- Club public portal + member dashboard
+- Executive operations panel
+- Event/volunteer module
+- Finance/reporting module
 
-### How Final Assembly Works
-1. Team frontends are deployed as separate services/containers.
-2. Team 01 gateway routes path prefixes to each team frontend service.
-3. API Gateway routes `/api/v1/...` paths to team backends.
-4. Team 01 shell links users into each module base path.
-5. Shared SSO is used for authentication and RBAC.
+### Cluster D: Lab Infrastructure Operations (Combined)
+Module: Server/PC Sharing + Lab Asset Management
 
-### Final Integration Checklist
-- Use the final checklist in [`Lab_Submission_Checklists.md`](./Lab_Submission_Checklists.md#final-integration-readiness-checklist-before-demo).
+Scope:
+- Asset inventory (PCs/devices/network hardware)
+- Allocation and usage tracking
+- Server/PC booking and availability monitoring
+- Health/status dashboard and incident logs
+- Maintenance request and lifecycle tracking
 
-## Frontend Starter Setup
-```bash
-cd frontend-starter
-npm install
-cp .env.example .env.local
-npm run dev
-```
+Key Deliverables:
+- Operations dashboard
+- Booking/allocation workflow
+- Asset registry and maintenance management
 
-For deterministic installs, generate and commit `frontend-starter/package-lock.json` after the first install.
+### Cluster E: VM Provisioning Portal (Standalone)
+Module: Student VM Request and Provisioning Control
 
-## Public Sharing Notes
-- This repo is intended for educational use.
-- No production credentials or secrets should be committed.
-- Use issue and PR templates for standard communication.
+Scope:
+- VM request and approval workflow
+- Quota policies (CPU/RAM/storage/time)
+- Lifecycle management (pending/running/stopped/expired)
+- Usage and quota visibility
+- Optional integration with infrastructure platform APIs
 
-## License
-See [`LICENSE`](./LICENSE).
+Key Deliverables:
+- Request/approval portal
+- Admin quota and provisioning controls
+- Student VM lifecycle view
+
+### Cluster F: Digital Knowledge Platform (Combined)
+Module: Digital Archive + Research Repository + Student Project Showcase + Digital Library & Catalog
+
+Scope:
+- Document/media uploads with rich metadata
+- Multi-format media support (PDF, DOCX, audio, video, images)
+- Search and browse (Bangla and English)
+- Versioning and lifecycle (draft/review/published/archived)
+- Access tiers (public/member/staff/restricted)
+- Research outputs, lab portfolio, and student project showcase
+- Bulk upload and metadata editing tools
+- Advanced library catalog search
+- Lending/return workflow with due tracking
+- Member account features (history, wishlist, hold requests)
+- Barcode/QR support for physical operations
+- Overdue and fine management
+- Librarian CRUD, import, and reporting
+
+Key Deliverables:
+- Archive upload and metadata editor
+- Public search/browse and media viewer
+- Research and showcase pages
+- Public catalog portal
+- Member borrowing workflow
+- Librarian operations dashboard and reports
+
+## 3) Suggested Additional Project Ideas (if more teams are needed)
+- Internship and alumni placement tracker
+- Department helpdesk and ticketing portal
+
+## 4) Labs 2-10 Roadmap
+
+### Lab 2: Problem Definition + SRS v1
+- Problem scope, users, constraints, risks
+- User stories and acceptance criteria
+- Wireframes and data model draft
+
+### Lab 3: Peer SRS Evaluation
+- Review another team's SRS
+- Log critical/important/suggestion issues
+- Provide manual test cases and revision feedback
+
+### Lab 4: Sprint 1 Implementation
+- Talk to stakeholders
+- Build initial vertical slices to distribute workload
+- Ship working MVP flows
+- Submit public repository link
+
+### Lab 5: Sprint 2 Implementation
+- Expand coverage and complete core flows
+- Improve reliability and error handling
+
+### Lab 6: Peer UI Critique (after two sprints)
+- Usability and accessibility review
+- Design consistency feedback with evidence
+- Prioritized UI fixes list
+
+### Lab 7: Testing Baseline
+- Team-owned unit/integration/e2e setup
+- Playwright coverage for critical flows
+
+### Lab 8: Peer QA
+- Another team extends tests and runs adversarial QA
+- Bug findings plus feature suggestions are both required outputs
+- Classify findings: bug, ambiguity, enhancement idea
+
+### Lab 9: Hardening and Deployment Readiness
+- Address critical bugs and high-value enhancements
+- Final documentation, runbook, and deployment packaging
+
+### Lab 10: Final Defense
+- Live demo
+- Architecture and implementation Q&A
+- Test evidence and design rationale walkthrough
+
+## 5) Minimum Submission Evidence (All Tracks)
+- SRS and revision history
+- Peer review artifacts
+- Sprint progress evidence
+- Test evidence (including changes after peer QA)
+- Deployment/run instructions
+- Known issues and enhancement backlog
+
+## Supporting Templates and Protocols
+- [`Standard_SRS_Template.md`](./Standard_SRS_Template.md)
+- [`Lab3_SRS_Review_Template.md`](./Lab3_SRS_Review_Template.md)
+- [`Lab4_SDD_Lite_API_Contract_Template.md`](./Lab4_SDD_Lite_API_Contract_Template.md)
+- [`Lab6_UI_Critique_Protocol.md`](./Lab6_UI_Critique_Protocol.md)
+- [`Lab7_Testing_Baseline_Protocol.md`](./Lab7_Testing_Baseline_Protocol.md)
+- [`Lab8_Peer_QA_Augmentation_Protocol.md`](./Lab8_Peer_QA_Augmentation_Protocol.md)
+- [`Lab_Submission_Checklists.md`](./Lab_Submission_Checklists.md)
