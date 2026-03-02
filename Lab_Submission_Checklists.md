@@ -1,52 +1,65 @@
 # Lab Submission Checklists
 
-Use this file as the final pre-submission checklist for each lab.
+Complete the checklist for the lab you are submitting.
 
-## Lab 2: SRS Submission Checklist
+## Global Repository Rules (Apply to all labs)
+- [ ] Development is in a public repository.
+- [ ] Repository remains public throughout the semester.
+
+## Lab 2: Problem Definition + SRS v1
 - [ ] SRS follows [`Standard_SRS_Template.md`](./Standard_SRS_Template.md).
-- [ ] At least 12 user stories have clear, testable acceptance criteria.
+- [ ] At least 12 user stories have testable acceptance criteria.
 - [ ] Data model and constraints are documented.
-- [ ] Inbound and outbound API dependencies are listed.
-- [ ] Requirement IDs are consistent and traceable.
-- [ ] Document includes unresolved risks and assumptions.
+- [ ] Roles and permissions are defined (if auth is needed).
+- [ ] Risks, assumptions, and open issues are listed.
 
-## Lab 3: Peer SRS Review Checklist
+## Lab 3: Peer SRS Review
 - [ ] Review report follows [`Lab3_SRS_Review_Template.md`](./Lab3_SRS_Review_Template.md).
 - [ ] Findings are categorized by severity.
-- [ ] At least 8 critical user stories are audited for testability.
-- [ ] Integration and contract blindspots are explicitly listed.
-- [ ] Mandatory fixes before Lab 4 are clearly stated.
+- [ ] At least 8 critical stories are checked for testability.
+- [ ] At least 15 manual test cases are included.
+- [ ] Mandatory fixes are clearly listed for the owner team.
 
-## Lab 4: SDD-lite + API Contract Pack Checklist
-- [ ] Document follows [`Lab4_SDD_Lite_API_Contract_Template.md`](./Lab4_SDD_Lite_API_Contract_Template.md).
-- [ ] SDD-lite includes module context, components, and 2 critical flows.
-- [ ] Data model summary includes key constraints.
-- [ ] OpenAPI file (`openapi.yaml` or `openapi.json`) is generated and committed.
-- [ ] At least 8 critical endpoints include success/failure examples.
-- [ ] Auth matrix and error contract are complete.
-- [ ] API namespace uses assigned `/api/v1/<team-path>`.
+## Lab 4: Sprint 1 + SDD-lite/API Pack
+- [ ] Sprint 1 MVP is working for key flows.
+- [ ] SDD-lite/API pack follows [`Lab4_SDD_Lite_API_Contract_Template.md`](./Lab4_SDD_Lite_API_Contract_Template.md).
+- [ ] OpenAPI file (`openapi.yaml` or `openapi.json`) is generated and committed (if API exists).
+- [ ] Auth matrix and error contract are completed (if auth/API exists).
+- [ ] Public repository link is submitted.
 
-## Lab 6: Self-Test Pack Checklist
-- [ ] Follow [`QA_Protocol_Lab6_Lab7.md`](./QA_Protocol_Lab6_Lab7.md) owner-team requirements.
-- [ ] Unit, integration, and end-to-end tests are included.
-- [ ] At least 3 critical user journeys are covered by e2e tests.
-- [ ] Negative and edge-case tests are present.
-- [ ] Test evidence and run commands are included.
-- [ ] SRS acceptance criteria to tests mapping is attached.
-- [ ] Known issues and limitations are documented.
+## Lab 5: Sprint 2 Completion
+- [ ] Core user flows are implemented end-to-end.
+- [ ] Major errors and edge cases are handled.
+- [ ] Sprint changelog and demo evidence are attached.
 
-## Lab 7: Peer QA Augmentation Checklist
-- [ ] Follow [`QA_Protocol_Lab6_Lab7.md`](./QA_Protocol_Lab6_Lab7.md) reviewer-team requirements.
-- [ ] Assigned team's baseline tests were run first.
-- [ ] New peer-added tests are included (recommended: 8-12 minimum).
-- [ ] Bug report includes severity, repro steps, expected vs actual, and evidence.
-- [ ] Coverage gap report against SRS acceptance criteria is included.
-- [ ] UI/accessibility/design-system findings are documented.
+## Lab 6: Peer UI Critique
+- [ ] Review follows [`Lab6_UI_Critique_Protocol.md`](./Lab6_UI_Critique_Protocol.md).
+- [ ] At least 5 key tasks are evaluated.
+- [ ] Top 5 usability issues are reported with evidence.
+- [ ] Top 5 improvement suggestions are provided.
 
-## Final Integration Readiness Checklist (Before Demo)
-- [ ] Frontend routes are under assigned `/portal/<module>` base path.
-- [ ] Team 01 gateway mapping has been verified for this module.
-- [ ] API endpoints stay under assigned `/api/v1/<team-path>`.
-- [ ] Authentication and role checks work for protected flows.
-- [ ] Cross-team dependencies are smoke-tested and documented.
-- [ ] Critical Lab 7 bugs are resolved or risk-accepted with notes.
+## Lab 7: Testing Baseline
+- [ ] Baseline follows [`Lab7_Testing_Baseline_Protocol.md`](./Lab7_Testing_Baseline_Protocol.md).
+- [ ] Unit/integration/e2e setup is documented.
+- [ ] Playwright tests cover critical flows.
+- [ ] Acceptance criteria to test mapping is attached.
+
+## Lab 8: Peer QA
+- [ ] Review follows [`Lab8_Peer_QA_Augmentation_Protocol.md`](./Lab8_Peer_QA_Augmentation_Protocol.md).
+- [ ] Owner baseline tests are executed first.
+- [ ] At least 8 new tests are added (recommended minimum).
+- [ ] Reproducible bug report is submitted with severity.
+- [ ] Feature/enhancement suggestions are included.
+
+## Lab 9: Hardening + Deployment Readiness
+- [ ] Critical and high-priority bugs are addressed.
+- [ ] Accepted enhancement suggestions are implemented or documented.
+- [ ] Playwright tests (minimum 5) are passing.
+- [ ] Runbook/setup/deployment steps are documented.
+- [ ] Known limitations and remaining risks are documented.
+
+## Lab 10: Final Defense
+- [ ] Live demo is ready.
+- [ ] Architecture and key design decisions are documented.
+- [ ] Test evidence is organized for presentation.
+- [ ] Code walkthrough plan is prepared.
