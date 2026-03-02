@@ -172,6 +172,7 @@ Key Deliverables:
 ### Lab 5: Sprint 2 Implementation
 - Expand coverage and complete core flows
 - Improve reliability and error handling
+- Automatic deployment setup
 
 ### Lab 6: Peer UI Critique (after two sprints)
 - Usability and accessibility review
@@ -195,6 +196,9 @@ Key Deliverables:
 - Live demo
 - Architecture and implementation Q&A
 - Test evidence and design rationale walkthrough
+- Submit final report
+- Submit video demo
+- Submit GitHub repository link
 
 ## 5) Marks Distribution
 | Submission | Marks |
