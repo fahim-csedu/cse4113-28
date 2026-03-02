@@ -7,7 +7,7 @@ Complete the checklist for the lab you are submitting.
 - [ ] Repository remains public throughout the semester.
 
 ## Lab 2: Problem Definition + SRS v1
-- [ ] SRS follows [`Standard_SRS_Template.md`](./Standard_SRS_Template.md).
+- [ ] SRS follows [`Lab2_SRS_Template.md`](./Lab2_SRS_Template.md).
 - [ ] At least 12 user stories have testable acceptance criteria.
 - [ ] Data model and constraints are documented.
 - [ ] Roles and permissions are defined (if auth is needed).
@@ -20,11 +20,10 @@ Complete the checklist for the lab you are submitting.
 - [ ] At least 15 manual test cases are included.
 - [ ] Mandatory fixes are clearly listed for the owner team.
 
-## Lab 4: Sprint 1 + SDD-lite/API Pack
+## Lab 4: Sprint 1 + SDD
 - [ ] Sprint 1 MVP is working for key flows.
-- [ ] SDD-lite/API pack follows [`Lab4_SDD_Lite_API_Contract_Template.md`](./Lab4_SDD_Lite_API_Contract_Template.md).
-- [ ] OpenAPI file (`openapi.yaml` or `openapi.json`) is generated and committed (if API exists).
-- [ ] Auth matrix and error contract are completed (if auth/API exists).
+- [ ] SDD follows [`Lab4_SDD_Template.md`](./Lab4_SDD_Template.md).
+- [ ] Architecture, data model, and critical flows are documented.
 - [ ] Public repository link is submitted.
 
 ## Lab 5: Sprint 2 Completion

@@ -166,6 +166,7 @@ Key Deliverables:
 - Talk to stakeholders
 - Build initial vertical slices to distribute workload
 - Ship working MVP flows
+- Submit SDD documentation
 - Submit public repository link
 
 ### Lab 5: Sprint 2 Implementation
@@ -200,7 +201,7 @@ Key Deliverables:
 |------------|-------|
 | Lab 2: Problem Definition + SRS v1 | 15 |
 | Lab 3: Peer SRS Evaluation | 10 |
-| Lab 4: SDD-lite + API Contract Pack | 10 |
+| Lab 4: SDD Documentation | 10 |
 | Lab 6: Peer UI Critique | 10 |
 | Lab 8: Peer QA | 15 |
 | Lab 10: Final Project Evaluation | 40 |
@@ -212,9 +213,9 @@ Presentation labs:
 
 
 ## 6) Supporting Templates and Protocols
-- [`Standard_SRS_Template.md`](./Standard_SRS_Template.md)
+- [`Lab2_SRS_Template.md`](./Lab2_SRS_Template.md)
 - [`Lab3_SRS_Review_Template.md`](./Lab3_SRS_Review_Template.md)
-- [`Lab4_SDD_Lite_API_Contract_Template.md`](./Lab4_SDD_Lite_API_Contract_Template.md)
+- [`Lab4_SDD_Template.md`](./Lab4_SDD_Template.md)
 - [`Lab6_UI_Critique_Protocol.md`](./Lab6_UI_Critique_Protocol.md)
 - [`Lab7_Testing_Baseline_Protocol.md`](./Lab7_Testing_Baseline_Protocol.md)
 - [`Lab8_Peer_QA_Augmentation_Protocol.md`](./Lab8_Peer_QA_Augmentation_Protocol.md)

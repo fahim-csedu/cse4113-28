@@ -25,12 +25,12 @@ List each finding with evidence.
 |----|-------------------------------------|------|-------------|--------------------------|---------------|
 | F-01 |  |  |  |  |  |
 
-## 4) Contract and Integration Checks
-- Are API boundaries clear for cross-team integration?
-- Are request/response shapes sufficiently defined?
-- Are auth and role expectations explicit?
+## 4) Interface and Dependency Checks
+- Are external interface boundaries clear (APIs, files, forms, or services)?
+- Are request/input and response/output shapes sufficiently defined (if applicable)?
+- Are auth and role expectations explicit (if applicable)?
 - Are error scenarios and failure states defined?
-- Are dependent team interfaces identified correctly?
+- Are dependencies and handoff points identified correctly?
 
 Notes:
 - 
