@@ -55,4 +55,7 @@ Evaluate usability, accessibility, and interface quality with actionable feedbac
 - Must-fix items before Lab 7:
 1.
 2.
-3.
+
+### 6) Contribution of Each Reviewer in the team (Separate Page for Each Reviewer)
+1. Reviewer 1 : Name, Bullet list of what they tested, List of their findings
+2. Reviewer 2 : Name, Bullet list of what they tested, List of their findings
